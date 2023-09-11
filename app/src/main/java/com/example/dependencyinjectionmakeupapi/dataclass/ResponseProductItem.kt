@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionmakeupapi
+package com.example.dependencyinjectionmakeupapi.dataclass
 
 
 import com.google.gson.annotations.SerializedName

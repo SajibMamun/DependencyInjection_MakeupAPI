@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import coil.load
 import com.example.dependencyinjectionmakeupapi.databinding.FragmentDetailsBinding
+import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProductItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

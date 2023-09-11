@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.dependencyinjectionmakeupapi.databinding.ItemDesignRcvBinding
+import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProductItem
 
-    class ProductAdapter(var prdouctListener:ProductListener):androidx.recyclerview.widget.ListAdapter<ResponseProductItem,ProductAdapter.ProductViewHolder> (
+class ProductAdapter(var prdouctListener:ProductListener):androidx.recyclerview.widget.ListAdapter<ResponseProductItem,ProductAdapter.ProductViewHolder> (
         COMPARATOR){
 
 

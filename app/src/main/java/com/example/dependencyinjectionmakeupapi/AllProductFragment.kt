@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.dependencyinjectionmakeupapi.databinding.FragmentAllProductBinding
+import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProduct
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
