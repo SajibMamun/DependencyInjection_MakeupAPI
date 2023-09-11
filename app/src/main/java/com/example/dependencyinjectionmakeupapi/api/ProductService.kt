@@ -1,4 +1,4 @@
-package com.example.dependencyinjectionmakeupapi
+package com.example.dependencyinjectionmakeupapi.api
 
 import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProduct
 import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProductItem
