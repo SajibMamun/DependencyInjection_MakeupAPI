@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.dependencyinjectionmakeupapi.api.ProductService
 import com.example.dependencyinjectionmakeupapi.api.RetrofitClient
 import com.example.dependencyinjectionmakeupapi.databinding.FragmentAllProductBinding
 import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProduct
@@ -14,13 +15,15 @@ import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
 @AndroidEntryPoint
-class AllProductFragment : Fragment(),ProductAdapter.ProductListener {
+class AllProductFragment: Fragment(),ProductAdapter.ProductListener {
     lateinit var binding: FragmentAllProductBinding
 
     lateinit var adapter: ProductAdapter
-
+    @Inject
+    lateinit var service: ProductService
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,7 +45,7 @@ class AllProductFragment : Fragment(),ProductAdapter.ProductListener {
 
 
 
-        var CallApiService= RetrofitClient.service.getAllProducts()
+        var CallApiService= service.getAllProducts()
 
         CallApiService.enqueue(object : Callback<ResponseProduct> {
             override fun onFailure(call: Call<ResponseProduct>?, t: Throwable?) {

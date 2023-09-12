@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import coil.load
+import com.example.dependencyinjectionmakeupapi.api.ProductService
 import com.example.dependencyinjectionmakeupapi.api.RetrofitClient
 import com.example.dependencyinjectionmakeupapi.databinding.FragmentDetailsBinding
 import com.example.dependencyinjectionmakeupapi.dataclass.ResponseProductItem
@@ -14,11 +15,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
+
 @AndroidEntryPoint
 class DetailsFragment : Fragment() {
 
       lateinit var binding: FragmentDetailsBinding
-
+    @Inject
+    lateinit var service: ProductService
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -27,7 +31,7 @@ class DetailsFragment : Fragment() {
 
         var ProductID=requireArguments().getInt(PRODUCT_KEY)
 
-        var CallApiServiceById= RetrofitClient.service.getProductsById(ProductID)
+        var CallApiServiceById= service.getProductsById(ProductID)
 
 
         CallApiServiceById.enqueue(object : Callback<ResponseProductItem> {
